@@ -1,0 +1,11 @@
+CHIP DMux8Way {
+    IN in, sel[3];
+    OUT a, b, c, d, e, f, g, h;
+
+    PARTS:
+    DMux4Way(in=in, sel[0]=sel[1], sel[1]=sel[2], a=o1, b=o2, c=o3, d=o4);
+    DMux(in=o1, sel=sel[0], a=a, b=b);
+    DMux(in=o2, sel=sel[0], a=c, b=d);
+    DMux(in=o3, sel=sel[0], a=e, b=f);
+    DMux(in=o4, sel=sel[0], a=g, b=h);
+}
