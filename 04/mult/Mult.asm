@@ -1,0 +1,22 @@
+	@2
+	M=0
+	@count
+	M=0
+(LOOP)
+	@count
+	D=M
+	@0
+	D=D-M
+	@END
+	D;JGE
+	@1
+	D=M
+	@2
+	M=M+D
+	@count
+	M=M+1
+	@LOOP
+	0;JMP
+(END)
+	@END
+	0;JMP
